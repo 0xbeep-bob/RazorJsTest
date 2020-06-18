@@ -1,0 +1,27 @@
+﻿@page
+
+@using RazorJsTest.Entities.Tables
+
+@model CountersModel
+
+<h2>Таблица 1</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Key</td>
+            <td>Value</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Counter i in Model.DisplayedCounters)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Key</td>
+                <td>@i.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>

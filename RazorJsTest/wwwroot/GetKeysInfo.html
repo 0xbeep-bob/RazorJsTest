@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/mytest.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <h2>Группировка по полю "Key" с их общим количеством и количество их значений больше единицы</h2>
+
+            <table class="table">
+                <tr>
+                    <td>Key</td>
+                    <td>Count</td>
+                    <td>Count more the none</td>
+                </tr>
+            </table>
+
+            <script>
+                $.getJSON("http://localhost:5000/keys", function (data) {
+                    var items = [];
+
+                    $.each(data, function (key, val) {
+                        items.push("<tr>");
+                        items.push("<td id = ''" + key + "''>" + val.key + "</td>");
+                        items.push("<td id = ''" + key + "''>" + val.info.count + "</td>");
+                        items.push("<td id = ''" + key + "''>" + val.info.countMoreTheOne + "</td>");
+                        items.push("</tr>");
+                    });
+
+                    $("<tbody/>", { html: items.join("") }).appendTo("table");
+                });
+            </script>
+        </main>
+    </div>
+</body>
+</html>

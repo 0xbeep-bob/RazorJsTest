@@ -1,0 +1,20 @@
+﻿@page
+
+@model AddCounterModel
+
+<h2>Добавить counter</h2>
+<form method="post">
+    <table class="table">
+        <tr>
+            <td><label>Key</label></td>
+            <td><input type="number" name="key" required /></td>
+        </tr>
+        <tr>
+            <td><label>Value</label></td>
+            <td><input type="number" name="value" required /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="Send" value="Добавить" /></td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,20 @@
+﻿@using RazorJsTest.Models
+
+@model List<KeyInfoModel>
+
+<h2>Группировка по полю "Key" с их общим количеством и количество их значений больше единицы</h2>
+<table class="table">
+    <tr>
+        <td>Key</td>
+        <td>Count</td>
+        <td>Count more the none</td>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.Key</td>
+            <td>@i.Info.Count</td>
+            <td>@i.Info.CountMoreTheOne</td>
+        </tr>
+    }
+</table>
